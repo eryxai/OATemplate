@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TemplateService.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d266ad358a2b9096151d7c6daff5fefe862f95cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84326c10e2949199b7a2e3d86c78a2f3c1388aab")]
 [assembly: System.Reflection.AssemblyProductAttribute("TemplateService.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TemplateService.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
