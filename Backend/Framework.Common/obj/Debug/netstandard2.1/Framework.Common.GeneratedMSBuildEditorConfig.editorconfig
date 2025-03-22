@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = Framework.Common
-build_property.ProjectDir = D:\WK\ST\Technical\eryx\GitHubPublic\OATEmplate\Backend\Framework.Common\
+build_property.ProjectDir = D:\WK\ST\Technical\eryx\Public\Github\OATemplate\Backend\Framework.Common\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

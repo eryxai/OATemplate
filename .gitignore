@@ -3,3 +3,15 @@
 ################################################################################
 
 /.vs/GitHubPublic/FileContentIndex/e68492cd-190c-47b7-a336-2321c41739b0.vsidx
+*.bin
+*.vsidx
+*.bin
+*.v2
+/Backend/.vs
+/Backend/Framework.Common/obj
+/Backend/Framework.Core/obj
+/Backend/TemplateService.WebAPI/obj
+/Backend/TemplateService.DI/obj
+/Backend/Framework.Common/bin/Debug/netstandard2.1
+*.bin
+*.pdb
