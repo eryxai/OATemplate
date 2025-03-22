@@ -1,0 +1,61 @@
+@mixin allocateTreeChild {
+  draw-children {
+    display: block;
+    draw-children {
+      .expand-collection {
+        .expand {
+          margin-inline-start: 1rem;
+        }
+      }
+      draw-children {
+        .expand-collection {
+          .expand {
+            margin-inline-start: 2rem;
+          }
+        }
+        draw-children {
+          .expand-collection {
+            .expand {
+              margin-inline-start: 3rem;
+            }
+          }
+          draw-children {
+            .expand-collection {
+              .expand {
+                margin-inline-start: 4rem;
+              }
+            }
+            draw-children {
+              .expand-collection {
+                .expand {
+                  margin-inline-start: 5rem;
+                }
+              }
+              draw-children {
+                .expand-collection {
+                  .expand {
+                    margin-inline-start: 6rem;
+                  }
+                }
+                draw-children {
+                  .expand-collection {
+                    .expand {
+                      margin-inline-start: 7rem;
+                    }
+                  }
+                  draw-children {
+                    .expand-collection {
+                      .expand {
+                        margin-inline-start: 8rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

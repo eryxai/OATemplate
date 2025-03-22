@@ -1,0 +1,60 @@
+@import '../variables/colors';
+
+.accordion {
+  /* Assuming you are using PrimeNG's default theme */
+  .custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .p-accordion-header-link {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border: none;
+    border-bottom: 1px dashed $Primary;
+    background-color: $white;
+    padding-inline: 0;
+  }
+ 
+  .p-accordion-content {
+    border: none;
+    padding-inline: 0;
+  }
+  .custom-header::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* When accordion is expanded */
+  .ui-accordion-header-active .custom-header::after {
+    transform: rotate(-135deg);
+  }
+}
+
+.accordion-style-1 {
+    .accordion-button {
+      &:focus {
+        box-shadow: none;
+      }
+  
+      &:not(.collapsed) {
+        color: $black;
+        background: var(--bs-gray-100);
+  
+        &::after {
+          background-image: var(--bs-accordion-btn-icon);
+        }
+      }
+    }
+  }

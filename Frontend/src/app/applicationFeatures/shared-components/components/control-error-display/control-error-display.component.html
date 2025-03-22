@@ -1,0 +1,8 @@
+<ng-container *ngIf="control">
+    <div *ngIf="control.errors && control.touched" 
+    class="error-container">
+        <p class="text-danger" 
+        style="margin: 0;" 
+        *ngFor="let err of getControlErrors()">{{ err | translate}}</p>
+    </div>
+</ng-container>

@@ -1,0 +1,54 @@
+<section class="list-section mt-3">
+  <div class="">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box-list-block shadow rounded-3">
+          <h4 class="border-bottom sec-title mb-3 pb-3">
+            {{ header }}
+          </h4>
+
+          <div class="activities-list">
+            <div
+              class="activity d-flex flex-row align-items-start justify-content-start"
+              *ngFor="let activity of data">
+              <div
+                class="time d-flex align-items-end flex-column font-weight-light">
+                <ng-container *ngIf="activity.date">
+                  <p>{{ activity.date | date: 'dd/MM/yyyy' }}</p>
+                  <small> {{ activity.date | date: 'h:mma' }}</small>
+                </ng-container>
+              </div>
+              <div
+                class="content px-3 mx-3 pb-4 position-relative d-flex flex-column">
+                <p [class]="activity.label">
+                  {{ activity.label | translate}}
+                </p>
+                <div class="d-flex gap-2">
+                  <span>
+                    {{ activity.notes }}
+                  </span>
+                </div>
+                <div class="d-flex gap-2" *ngIf="activity.attachment">
+                  <span>
+                    <button (click)="goToLink(activity.attachment)" class="btn">
+                      <span class="ci-attachment"></span>
+                    </button>
+                  </span>
+                </div>
+                <div *ngIf="activity.startDate" class="d-flex gap-2">
+                  <label for=""> {{ 'license.startDate' | translate }} </label>
+                  :
+                  {{ activity.startDate | date: 'dd/MM/yyyy' }}
+                </div>
+                <div *ngIf="activity.endDate" class="d-flex gap-2">
+                  <label for=""> {{ 'license.endDate' | translate }} </label> :
+                  {{ activity.endDate | date: 'dd/MM/yyyy' }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

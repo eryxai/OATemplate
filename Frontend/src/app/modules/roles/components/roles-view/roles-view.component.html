@@ -1,0 +1,49 @@
+<nav aria-label="breadcrumb" class="mb-2">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
+        </li>
+        <li class="breadcrumb-item " aria-current="page"><a [routerLink]="['/roles/list']">{{"Role.list.title"|translate}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{"Role.viewUserRoles"|translate}}</li>
+    </ol>
+</nav>
+<div class="form-card">
+    <form [formGroup]="formGroup" class="mt-4">
+            <div class="row">
+              <div class="col-md-6 mb-6">
+                <label for="">{{"shared.arabicName" | translate}}</label>
+                <input readonly type="text" class="form-control" name="arabicName" formControlName="nameAr" placeholder="...">
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="">{{"shared.englishName" | translate}}</label>
+                <input readonly type="text" class="form-control" name="englishName" formControlName="nameEn" placeholder="...">
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="">{{"shared.arabicDescription" | translate}}</label>
+                <input readonly type="text" class="form-control" name="arabicDescription" formControlName="descriptionAr" placeholder="...">
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="">{{"shared.englishDescription" | translate}}</label>
+                <input readonly type="text" class="form-control" name="englishDescription" formControlName="descriptionEn" placeholder="...">
+              </div>
+            </div>
+    </form>
+    <div class="card" style="padding: 0;margin-top: 10px;">
+        <div class="card-header"> {{"shared.permissions"|translate}} </div>
+        <div class="row" style="padding: 13px;">
+            <ul *ngFor="let item of PermissionsList" class="col-4">
+                <li>
+                    <a>
+                        <span class="text"> {{item.name|translate}} </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div> 
+    <div class="col-12 ">
+        <div class=" justify-content-center d-flex mt-5 ">
+            <button type="" class="light-btn" (click)="goToList()"> <span>{{"shared.back"|translate}}</span></button>
+        </div>
+    </div>
+   
+</div>

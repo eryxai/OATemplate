@@ -1,0 +1,215 @@
+// @import '../../../../../assets/styles/color-palate.scss';
+@import '../../../../../assets/styles/variables/colors';
+
+.uni-login-wrapper {
+  .form-login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 90vh;
+
+    .uni-login-content {
+      align-content: center;
+      background: $background-color1;
+      padding: 2rem;
+      border-radius: 25px;
+      .box-info {
+        .content {
+          height: 100%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          h4 {
+            color: $white;
+            direction: ltr;
+          }
+        }
+      }
+
+      .form-login {
+        .form-logo {
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+
+        h2 {
+          font-weight: 700;
+          text-align: center;
+          font-size: 30px;
+
+          img {
+            max-width: 25px;
+            margin-inline-start: 0.5rem;
+          }
+        }
+
+        form {
+          min-width: 400px;
+
+          .email-head,
+          .pass-head {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: $d-main-color1;
+          }
+          .login-button {
+            height: 50px;
+          }
+
+          .input-container {
+            background-color: $background-color1;
+            border-radius: 16px;
+            padding: 0.5rem;
+            width: 100%;
+
+            .input-icon {
+              display: flex;
+              align-items: center;
+              margin-inline-end: 0.5rem;
+            }
+
+            .input-icon-start {
+              order: -1;
+            }
+
+            .input-field {
+              flex: 1;
+              border: none;
+              outline: none;
+              font-size: 1rem;
+              height: 35px;
+            }
+
+            .input-icon-end {
+              width: 33px;
+              height: 33px;
+              position: relative;
+            }
+
+            input {
+              background: inherit;
+              border: unset;
+            }
+          }
+        }
+      }
+    }
+    .bg {
+      position: absolute;
+      top: 20%;
+      left: 52%;
+      z-index: -1;
+    }
+  }
+}
+
+.developer {
+  color: $hover-color;
+}
+
+.login-footer {
+  z-index: 9;
+}
+
+.text-green {
+  color: $hover-color;
+}
+
+.text-intro {
+  color: #a1a9c4;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 19px;
+}
+
+.login-button {
+  min-height: 50px;
+  font-size: 20px;
+  background-color: $Primary;
+  border-radius: 17px;
+  color: $white;
+  text-transform: uppercase;
+  outline: none;
+  width: 100%;
+  border: none;
+}
+
+input:-internal-autofill-selected {
+  background-color: $white !important;
+}
+
+.input-container:focus-within,
+.input-container:focus,
+.input-container:active,
+.input-container:has(input:-internal-autofill-selected) {
+  background: #e8f0fe !important;
+}
+
+.active-input {
+  border: 1px solid $Primary;
+}
+
+.copy-write {
+  font-size: #252a34;
+  margin-block: 1rem;
+}
+
+@media (max-width: 991px) {
+  .form-login-container {
+    padding-right: 0;
+    max-width: 100%;
+  }
+  .form-container {
+    margin: 0;
+  }
+  .bg-login-container {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 70%;
+    }
+    .bg-login {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .form-login {
+    padding-right: 0;
+    align-items: center;
+  }
+  form {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .form-login {
+    padding-right: 0;
+    align-items: center;
+  }
+  form {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .bg-login-container {
+    display: none;
+  }
+}

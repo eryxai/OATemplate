@@ -1,0 +1,18 @@
+<button
+  (click)="btnClick($event)"
+  type="{{ role }}"
+  class="btn unil-btn d-flex align-items-center justify-content-center w-100 py-1 unil-text-grey-dark thin-border-dark-grey cursor-pointer"
+  [ngClass]="{
+    'unil-primary-btn': type == BTN_TYPES.primary,
+    'unil-primary-accent-btn': type == BTN_TYPES.primaryAccent,
+    'unil-secondary-btn': type == BTN_TYPES.secondary,
+    'unil-gradient-btn': type == BTN_TYPES.gradient,
+    disabled: disabled,
+    'unil-small-btn': size === 'sm'
+  }"
+  [disabled]="disabled"
+  chkRtl
+  [title]="title | translate">
+  <span class="unil-button-title">{{ title | translate }}</span>
+   
+</button>

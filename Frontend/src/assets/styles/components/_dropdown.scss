@@ -1,0 +1,7 @@
+// @import '../../color-palate.scss';
+@import '../variables/colors';
+
+// Dropdown
+.p-dropdown:not(.p-disabled):hover {
+    border-color: $Primary;
+  }

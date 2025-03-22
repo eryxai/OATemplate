@@ -1,0 +1,63 @@
+// @import '../../color-palate.scss';
+@import '../variables/colors';
+
+// Paginator Styles
+.p-paginator-bottom {
+    border: none;
+    box-shadow: none;
+  }
+
+  // Paginator Pages
+.p-paginator {
+    background-color: $background-color1;
+    .p-paginator-pages {
+      .p-paginator-page {
+        color: #a1a9c4;
+        margin: 0;
+        min-width: 35px;
+        height: 35px;
+      }
+  
+      .p-paginator-page.p-highlight {
+        background-color: $main-color7;
+        color: $white;
+      }
+    }
+  
+    .p-paginator-current {
+      color: $main-color8;
+    }
+  
+    .p-paginator-rpp-options {
+      &.p-dropdown {
+        background: #e8e8e8;
+        border: none;
+        border-radius: 35%;
+        padding: 3px;
+        .p-dropdown-items {
+          padding-left: 0;
+        }
+  
+        & * {
+          color: $Primary;
+        }
+      }
+  
+      .p-dropdown-label {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      .p-dropdown-trigger {
+        width: unset;
+        padding-inline-end: 2px;
+  
+        .p-dropdown-trigger-icon {
+          font-size: 9px;
+        }
+      }
+    }
+  }

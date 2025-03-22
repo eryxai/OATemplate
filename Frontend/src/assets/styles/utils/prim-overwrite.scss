@@ -1,0 +1,198 @@
+@import '../variables/colors';
+// Color Variables
+$Primary: $Primary;
+$hover-color: $hover-color;
+$main-color7: $main-color7;
+$white: $white;
+$disabled-color: $disabled-color;
+
+$main-color8: $main-color8;
+$Primary: $Primary;
+$white: white;
+$background-color1: $background-color1;
+
+// Tab View
+.p-tabview .p-tabview-nav li {
+  width: 50%;
+}
+
+// Input Text
+.p-inputtext:enabled:hover {
+  border-color: $hover-color;
+  font-family: cairo;
+}
+
+// Button Styles
+.p-button.p-button-outlined:enabled:hover {
+  background: $disabled-color;
+  color: $Primary;
+  border: 1px solid;
+}
+
+// Dropdown
+.p-dropdown:not(.p-disabled):hover {
+  border-color: $Primary;
+}
+
+// Data Table Styles
+.p-datatable {
+  box-shadow: none;
+
+  .p-datatable-wrapper {
+    border-radius: 2rem;
+    box-shadow: 1.1px 6.4px 27px 0 rgba(105, 95, 151, 0.08);
+    background-color: $white;
+  }
+
+  .p-datatable-thead > tr > th {
+    background: $main-color7;
+    border-radius: 0;
+    border: none;
+    padding: 0.5rem 10px;
+    color: $white;
+
+    &,
+    &
+      *:not(
+        .p-column-filter-menu-button:hover,
+        .p-column-filter-menu-button-open,
+        .p-column-filter-menu-button.p-column-filter-menu-button-open span,
+        .p-column-filter-menu-button.p-column-filter-menu-button-active span
+      ) {
+      color: $white !important;
+    }
+  }
+
+  .p-sortable-column:not(.p-highlight):hover {
+    background: $main-color7;
+    color: $white;
+    opacity: 0.9;
+  }
+}
+
+// Data Table Header Borders
+.p-datatable-thead th:nth-of-type(1) {
+  border-top-left-radius: 25px;
+}
+
+.p-datatable-thead th:last-of-type {
+  border-top-right-radius: 25px;
+}
+
+// Table Centering
+.p-table-center {
+  .p-datatable-tbody > tr > td,
+  .p-datatable-thead > tr > th {
+    text-align: center;
+  }
+}
+
+// Paginator Styles
+.p-paginator-bottom {
+  border: none;
+  box-shadow: none;
+}
+
+.p-column-filter-overlay {
+  z-index: 99999999999 !important;
+  .p-button:not(.p-button-text) {
+    background: $Primary;
+    border-color: $Primary;
+    color: $white;
+    font-family: cairo;
+  }
+}
+
+.p-column-filter-menu-button:hover,
+.p-column-filter-menu-button.p-column-filter-menu-button-open,
+.p-column-filter-menu-button.p-column-filter-menu-button-active,
+.p-sortable-column-badge {
+  background: $Primary !important;
+  color: $white !important;
+  border-radius: 15px;
+
+  span {
+    color: $white !important;
+  }
+}
+
+// Paginator Pages
+.p-paginator {
+  background-color: $background-color1;
+  .p-paginator-pages {
+    .p-paginator-page {
+      color: #a1a9c4;
+      margin: 0;
+      min-width: 35px;
+      height: 35px;
+    }
+
+    .p-paginator-page.p-highlight {
+      background-color: $main-color7;
+      color: $white;
+    }
+  }
+
+  .p-paginator-current {
+    color: $main-color8;
+  }
+
+  .p-paginator-rpp-options {
+    &.p-dropdown {
+      background: #e8e8e8;
+      border: none;
+      border-radius: 35%;
+      padding: 3px;
+      .p-dropdown-items {
+        padding-left: 0;
+      }
+
+      & * {
+        color: $Primary;
+      }
+    }
+
+    .p-dropdown-label {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .p-dropdown-trigger {
+      width: unset;
+      padding-inline-end: 2px;
+
+      .p-dropdown-trigger-icon {
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+// RTL Styles
+
+
+.p-input-number-wrapper {
+  padding-block: 0;
+
+  .prim-input-number {
+    .p-inputnumber-input,
+    & {
+      border: none;
+      width: 100%;
+      background-color: $white;
+    }
+  }
+}
+
+
+
+.border-rounded-85 {
+  width: 85%;
+
+  .p-dialog-content {
+    border-radius: 15px; // Adjust the value as needed
+  }
+}

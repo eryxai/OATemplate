@@ -1,0 +1,167 @@
+@import '../styles/variables/variables.scss';
+.changed{
+  border: 2px,solid,#28a745 !important;
+}
+.p-calinder-changed {
+  border: 2px, solid, #28a745 !important;
+  padding-top: 9px !important;
+  padding-bottom: 11px !important;
+  border-radius: 17px;
+}
+.text-blue {
+  color: $text-main;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.active-icon {
+  cursor: pointer;
+  color: $Secondary;
+}
+
+// Background-color
+
+.ellipsis-large-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.white-shadow-box {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: $cardShadow;
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+
+.unicode-plainText {
+  unicode-bidi: plaintext;
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    color: $Primary;
+  }
+}
+.fit-content {
+  width: fit-content;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.blue-background-color {
+  background-color: rgb(0 83 142 / 4%);
+}
+.detail-item {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+}
+
+.gap-40 {
+  gap: 40px;
+}
+.fb-100 {
+  flex-basis: 100%;
+}
+/* Colors */
+.text-yellow {
+  color: $yellow-color;
+}
+.text-blue {
+  color: $Primary;
+}
+.text-green {
+  color: $green-color;
+}
+.text-main {
+  color: $Primary;
+}
+.text-grey {
+  color: $main-color3;
+}
+.text-grey-2 {
+  color: $text-grey-2;
+}
+.text-red {
+  color: $red-color;
+}
+.text-white {
+  color: $white;
+}
+
+/*Fonts */
+.fs-16 {
+  font-size: 16px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+
+.success-status {
+  color: $green-color;
+  background-color: rgba($color: $green-color, $alpha: 0.1);
+}
+.warning-status {
+  color: $yellow-color;
+  background-color: rgba($color: $yellow-color, $alpha: 0.1);
+}
+.status-chip {
+  border-radius: 0px 20px 0 20px;
+  padding: 0.6rem 2.5rem;
+  &.Approved,
+  &.Default {
+    color: $Primary;
+    background-color: rgba($Primary, 0.12);
+  }
+  &.Closed {
+    color: $Primary;
+    background-color: rgba($Primary, 0.12);
+  }
+  &.Rejected {
+    color: $red-color;
+    background-color: rgba($red-color, 0.12);
+  }
+  &.Suspended {
+    color: $yellow-color;
+    background-color: rgba($yellow-color, 0.12);
+  }
+  // &.ClosedWithLegalRecord {
+  //   color: $Primary;
+  //   background-color: rgba($Primary, 0.12);
+  // }
+  &.Renew {
+    color: $text-main;
+    background-color: rgba($text-main, 0.12);
+  }
+}
+.Approved,
+.Default {
+  color: $Primary;
+}
+.Closed {
+  color: $main-color4;
+}
+.Rejected {
+  color: $red-color;
+}
+.Suspended {
+  color: $yellow-color;
+}
+
+.Renew {
+  color: $text-main;
+}
+
+.rtl {
+  &.rtl-icon,
+  .rtl-icon {
+    transform: rotateY(180deg);
+  }
+}

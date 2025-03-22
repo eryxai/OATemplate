@@ -1,0 +1,351 @@
+// @import '../../color-palate.scss';
+@import '../variables/variables.scss';
+@import '../variables/colors';
+@import '../mixins/mixins.scss';
+
+//***************************** Buttons
+.main-btn {
+    font-size: 14px;
+    background: $Primary;
+    padding: 6px 17px;
+    border-radius: 5px;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+    transition: $transition-3;
+    text-transform: capitalize;
+    border-radius: 10px;
+  
+    &:focus {
+      background: $Primary;
+      color: $white;
+    }
+  
+    &:hover {
+      background: $Secondary;
+      color: $white;
+    }
+  
+    &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  
+    &.red {
+      background: red;
+  
+      &:hover {
+        background: #ff6060;
+      }  
+    }
+  }
+  
+  .main-btn-1 {
+    font-size: 14px;
+    background: $dark-main;
+    padding: 6px 17px;
+    border-radius: 5px;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+    transition: $transition-3;
+    text-transform: capitalize;
+    border-radius: 25px;
+  
+    &:focus {
+      background: $Primary;
+      color: $white;
+    }
+  
+    &:hover {
+      background: $Primary;
+      color: $white;
+    }
+  
+    &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+  
+  .light-btn {
+    font-size: 14px;
+    background: $Secondary;
+    padding: 5px 17px;
+    border-radius: 5px;
+    color: $gray-color-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+    transition: $transition-3;
+    text-transform: capitalize;
+    border-radius: 10px;
+    color: $white;
+  
+    &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  
+    &:hover {
+      background: $main-color4;
+      color: $white;
+    }
+  }
+  
+  .dark-btn {
+    font-size: 14px;
+    background: $main-color4;
+    padding: 5px 17px;
+    border-radius: 5px;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+    transition: $transition-3;
+    text-transform: capitalize;
+    border-radius: 25px;
+  
+    &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  
+    &:focus {
+      color: $white;
+      background: $main-color4;
+    }
+  
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+  }
+  
+  .simple-btn {
+    font-size: 14px;
+    background: none;
+    padding: 0;
+    border-radius: 5px;
+    color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+    transition: $transition-3;
+    text-transform: capitalize;
+  
+    &:hover {
+      color: $main-color3;
+    }
+  }
+  
+  .morelight-btn {
+    background: $Secondary;
+    padding: 5px 17px;
+    border-radius: 25px;
+    color: $gray-color-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+    transition: $transition-3;
+    text-transform: capitalize;
+  
+    &:hover {
+      background: $main-color4;
+      color: $white;
+    }
+  }
+  
+  .trash-btn {
+    background: none;
+    font-size: 16px;
+    background-color: rgb($red-color, 0.1);
+    color: $red-color !important;
+    border: 0;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition-4;
+  
+    &:hover {
+      background-color: $red-color;
+      color: $white !important;
+  
+      svg {
+        color: $white;
+      }
+    }
+  }
+  
+  .edit-btn {
+    color: $Primary;
+    border: none;
+    background: none;
+    aspect-ratio: 1/1;
+    width: 20px;
+    font-size: 16px;
+    transition: $transition-3;
+  
+    &:hover {
+      color: $Secondary;
+    }
+  
+    &.style2 {
+      border-radius: 100%;
+      border: 1px solid $Secondary;
+      width: 45px;
+      scale: 0.91;
+  
+      &:hover,
+      &.active {
+        color: $white;
+        background: $Secondary;
+        scale: 1;
+      }
+    }
+  }
+  
+  .border-btn {
+    color: $main-color3;
+    border: 1px solid $border-color;
+    background: none;
+    aspect-ratio: 1/1;
+    min-width: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+  
+    &:hover {
+      color: $Primary;
+    }
+  }
+  
+  .border-btn2 {
+    color: $main-color3;
+    border: 1px solid $border-color;
+    background: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  
+    &:hover {
+      color: $Primary;
+    }
+  }
+  
+  .dropdown-main {
+    z-index: 1030;
+  
+    .dropdown-menu {
+      //min-width: 200px;
+      padding: 20px;
+      border: none;
+      box-shadow: 0 0 10px 5px #bdbdbd5e;
+  
+      li {
+        margin-bottom: 10px;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  .dropdown-mod {
+    width: 100%;
+  
+    .dropdown-btn {
+      border: 1px solid $border-color;
+      height: 40px;
+      width: 100%;
+  
+      &:after {
+        display: none;
+      }
+  
+      &:hover {
+        border: 1px solid $Primary;
+      }
+    }
+  
+    .dropdown-menu {
+      min-width: 350px;
+      border: none;
+      background-color: $white;
+      box-shadow: 0px 0 15px 10px rgb(244, 244, 244);
+    }
+  }
+
+// Button Styles
+.p-button.p-button-outlined:enabled:hover {
+    background: $disabled-color;
+    color: $Primary;
+    border: 1px solid;
+  }
+  
+
+// .btn-primary{
+//     background-color: $Primary !important;
+// }
+
+.btn-primary {
+    background: $green-color;
+    border-color: $green-color;
+    min-width: 100px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    cursor: pointer !important;
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:visited,
+  .btn-primary:focus {
+    background: #005256;
+    border-color: #005256;
+  }
+  
+  .btn-cancel {
+    background-color: $main-color3;
+    border-color: $main-color3;
+    color: $white;
+    cursor: pointer;
+  }
+  
+  .dataEntered {
+    background: #eef7f3;
+    padding: 20px 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+  
+  
+  
+  .p-button.p-button-text {
+    color: $hover-color;
+    font-family: $font-family-cairo;
+  }
+  
+  .p-button.p-button-text:enabled:hover {
+    background: rgb(0, 82, 86, 11%);
+    color: $hover-color;
+    border-color: transparent;
+  }

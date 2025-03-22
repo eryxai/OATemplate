@@ -1,0 +1,114 @@
+<nav aria-label="breadcrumb" class="mb-2">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
+    </li>
+    <li class="breadcrumb-item" aria-current="page">
+      <a [routerLink]="['/users/list']">{{ 'User.listUsers' | translate }}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <span *ngIf="!editId"> {{ 'User.addNewUser' | translate }}</span>
+      <span *ngIf="editId"> {{ 'User.editUser' | translate }}</span>
+    </li>
+  </ol>
+</nav>
+<div class="form-card">
+  <form [formGroup]="editForm"(ngSubmit)="submit()" class="mt-4">
+    <div class="row mb-4">
+      <div class="col-md-6 mb-6">
+        <msn-input [isMandatory]="true" label="User.nameAr" formControlName="nameAr" placeholder="{{'User.nameAr'|translate}}"></msn-input>
+          <app-control-error-display [control]="getControl('nameAr')">
+          </app-control-error-display>
+      
+      </div>
+      <div class="col-md-6 mb-6">
+        <msn-input [isMandatory]="true" label="User.nameEn" formControlName="nameEn" placeholder="{{'User.nameEn'|translate}}"></msn-input>
+        <app-control-error-display [control]="getControl('nameEn')">
+        </app-control-error-display>
+      </div>
+      <!-- <div class="col-md-6 mb-6">
+        <msn-input [isMandatory]="true" label="shared.phone" formControlName="phoneNumber" placeholder="{{'shared.phone'|translate}}"></msn-input>
+        <app-control-error-display [control]="getControl('phoneNumber')"[patternMessage]="'mobile'">
+        </app-control-error-display>
+     
+      </div> -->
+      <div class="col-md-6 mb-6">
+        <msn-input [isMandatory]="true" label="shared.email" type="email"email="true"
+        formControlName="email" placeholder="{{'shared.email'|translate}}"></msn-input>
+        <app-control-error-display [control]="getControl('email')" [patternMessage]="'email'">
+        </app-control-error-display>
+       
+      </div>
+      <div class="col-md-6 mb-6" *ngIf="!editId">
+        <msn-input [isMandatory]="true"  label="shared.password"
+         formControlName="password" autocomplete="off" placeholder="{{'shared.password'|translate}}"></msn-input>
+        <app-control-error-display [control]="getControl('password')" [patternMessage]="'strongPassword'">
+        </app-control-error-display>
+        
+      </div>
+
+      <div class="col-md-6 mb-6" *ngIf="!editId">
+        <msn-input [isMandatory]="true"  label="shared.confirmPassword"
+         formControlName="confirmPassword" autocomplete="off" placeholder="{{'shared.confirmPassword'|translate}}"></msn-input>
+        <app-control-error-display [control]="getControl('confirmPassword')">
+        </app-control-error-display>
+        
+      </div>
+      <div class="col-md-6 mb-6">
+        <div class="input-with-label">
+          <label for="isActive"
+            >{{ 'shared.status' | translate }}
+            <i class="text-danger">*</i></label
+          >
+          <select class="form-control" formControlName="isActive" id="states">
+            <option disabled value="null">
+              {{ 'shared.pleaseSelect' | translate }}
+            </option>
+            <option value="true">{{ 'shared.active' | translate }}</option>
+            <option value="false">{{ 'shared.inActive' | translate }}</option>
+          </select>
+          <app-control-error-display [control]="getControl('isActive')">
+          </app-control-error-display>
+        </div>
+      </div>
+      
+  <div class="col-md-6 mb-6">
+    <label for="isActive">{{ 'User.role' | translate }}
+      <i class="text-danger">*</i>
+    </label>
+    <br>
+
+    <p-multiSelect formControlName="roleIds"
+    [options]="RoleList!"
+    optionLabel="name" 
+    selectedItemsLabel="{0} role selected"
+    aria-label=".form-select-lg example" 
+    [style]="{'min-width':'350px','min-height': '50px'}"
+    [panelStyle]="{'max-width':'350px'}" 
+     >
+    </p-multiSelect>
+    <app-control-error-display [control]="getControl('roleIds')">
+    </app-control-error-display>
+  </div>
+      
+
+      
+
+    
+      <div>
+        <br />
+      </div>
+      <div class="col-2 ms-auto d-flex gap-10 justify-content-end">
+      
+        <button type="submit" (click)="submit()"[disabled]="isDisabled" class="btn btn-primary mx-1">
+          <span> {{ 'shared.save' | translate }} </span>
+        </button>
+        <button type="" class="btn btn-cancel mx-1" (click)="goToList()">
+          <span>{{
+            'shared.cancel' | translate
+          }}</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

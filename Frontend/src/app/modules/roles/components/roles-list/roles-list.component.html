@@ -1,0 +1,30 @@
+<nav aria-label="breadcrumb" class="mb-2 d-flex justify-content-between">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#"><i class="fa-solid fa-house-chimney "></i></a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ 'Role.list.title' | translate }}
+    </li>
+  </ol>
+
+  <div class="justify-content-end d-flex mb-2 gap-15 file-entry">
+    <button
+      *hasPermission="[+permissionEnum.RoleAdd]"
+      class="btn main-btn mt-5"
+      routerLink="/roles/add">
+      {{ 'shared.create' | translate }}
+    </button>
+    
+  </div>
+</nav>
+
+<ng-template #grid>
+  <msn-grid [data]="dataList" [columns]="tableColumns" [moduleTitle]="'Role.list.title' | translate" [actions]="tableActions" [(pageSize)]="flitterDto.pagination.pageSize!" [totalRecordsLength]="flitterDto.pagination.totalCount!" [(pageIndex)]="flitterDto.pagination.pageIndex!"
+            (pageIndexChange)="getActiveRole()" (sortChanged)="onSortChanged($event)" (filterChanged)="onFilterChanged($event)"></msn-grid>
+</ng-template>
+<div class="d-flex justify-content-center" *ngIf="this.isLoading; else grid">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<!-- <mat-paginator #paginator [dir]="'ltr'" [length]="pagination?.totalCount" [pageSize]="pagination?.pageSize"
+[pageIndex]="pagination?.pageIndex" [pageSizeOptions]="pageSizeOptions"
+showFirstLastButtons
+(page)="gotoPage($event)">
+</mat-paginator> -->
+
+<!--  <div class="pagination">
+    <a (click)="gotoPageFirst()">&laquo;</a>
+    <a (click)="gotoPageDown()">...</a>
+
+    <a *ngFor="let p of pages" (click)="gotoPage(p.value)" [class.active]="p.isSelected">{{p.label}}</a>
+    <a (click)="gotoPageUp()">...</a>
+    <a (click)="gotoPageLast()">&raquo;</a>
+    <a class="white">
+        <span class="sub">{{ ((pagination?.pageIndex||0) + 1) }}</span>&nbsp;<span class="of">of</span>&nbsp;<span class="total">{{pagination?.totalCount}}</span>
+    </a>
+</div>  -->
+
+<nav aria-label="..." class="mt-3">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a
+            (click)="gotoPageFirst()"
+            [ngClass]="{ disabled: currentPage == 0 }"
+            class="page-link unstyled"
+            ><i class="fa-solid fa-backward-step"></i
+          ></a>
+        </li>
+        <li class="page-item">
+          <a
+            [ngClass]="{ disabled: currentPage == 0 }"
+            class="page-link unstyled"
+            (click)="gotoPagePerv()"
+            >{{ 'shared.prev' | translate }}</a
+          >
+        </li>
+
+        <li
+          class="page-item"
+          *ngFor="let p of pages.slice(sliceStart, sliceEnd)"
+          (click)="gotoPage(p.value)"
+          [ngClass]="{ active: p.isSelected == true }"
+          aria-current="page">
+          <a class="page-link">{{ p.label }}</a>
+        </li>
+
+        <!--     <li class="page-item"><a class="page-link"
+            href="#">...</a></li> -->
+
+        <li class="page-item">
+          <a
+            class="page-link unstyled"
+            (click)="gotoPageUp()"
+            [ngClass]="{ disabled: currentPage == pages.length - 1 }"
+            >{{ 'shared.next' | translate }}</a
+          >
+        </li>
+        <li class="page-item" (click)="gotoPageLast()">
+          <a
+            class="page-link unstyled"
+            [ngClass]="{ disabled: currentPage == pages.length - 1 }"
+            ><i class="fa-solid fa-forward-step"></i
+          ></a>
+        </li>
+        <li class="page-item">
+          <a class="page-link unstyled p-0">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary btn-sm dropdown-toggle"
+                type="button"
+                id="dropdownMenu2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{ this.pagination.pageSize }}
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li *ngFor="let p of pageSizeOptions">
+                  <button
+                    class="dropdown-item"
+                    (click)="updatePageSize(p)"
+                    type="button">
+                    {{ p }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <h6 class="p-1 text-gray text-center font-14">
+        {{ 'shared.total' | translate }} :
+        <span class="p-1 text-gray"
+          >{{ pagination.totalCount }} {{ 'shared.items' | translate }}</span
+        >
+      </h6>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,16 @@
+@import "../variables/colors";
+@mixin main-gradient-degree($degree, $color1, $color2) {
+  background-image: linear-gradient($degree, $color1, $color2);
+}
+
+@mixin card-wrapper(
+  $background-color: $white,
+  $border-radius: 8px,
+  $padding: 16px,
+  $margin: 16px
+) {
+  background-color: $background-color;
+  border-radius: $border-radius;
+  padding: $padding;
+  margin: $margin;
+}

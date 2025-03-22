@@ -1,0 +1,37 @@
+<div *ngIf="!url" class="input-image">
+  <input
+    id="file-upload{{ name }}"
+    [name]="name"
+    type="file"
+    [accept]="accept"
+    (change)="onUploadImage($event)" />
+  <div class="custom-image-upload">
+    <div class="chosen-image">
+      <label for="file-upload{{ name }}">
+        <span class="pi pi-cloud-upload"></span>
+      </label>
+    </div>
+
+    <label class="f-6 w-100 cursor-pointer" for="file-upload{{ name }}">
+      <div class="w-100 status-text">
+        <span *ngIf="!url" class="f-6 d-inline-block w-100"
+          >{{ 'shared.upload' | translate }}
+        </span>
+        <span *ngIf="url" class="error-red f-6" (click)="removeImage()"
+          >{{ 'shared.removeImage' | translate }}
+        </span>
+      </div>
+    </label>
+  </div>
+</div>
+<div class="mt-2">
+  <img
+    *ngIf="url && viewImage"
+    [src]="url"
+    alt="image"
+    width="100"
+    class="rounded img-view" />
+  <button *ngIf="url" class="btn btn-customDanger" (click)="removeImage()">
+    <i class="fa fa-times"></i>
+  </button>
+</div>

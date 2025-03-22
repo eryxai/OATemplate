@@ -1,0 +1,9 @@
+@import "../../../../../assets/styles/variables/colors";
+.content {
+  background: $background-color1;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-inline: 0.7rem;
+  margin-bottom: 1rem;
+  min-height: calc(100vh - 100px);
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localizations>
+	<Id>الرقم</Id>
+	<CreationDate>تاريخ الإنشاء</CreationDate>CreationDate
+	<Name>الاسم</Name>
+	<Description>الوصف</Description>
+	<IsActive>مفعل</IsActive>
+	<FounderCode>كود المؤسس</FounderCode>
+	<IsCapital>عاصمة</IsCapital>
+	<CountryName>اسم الدولة</CountryName>
+	<IsMain>رئيسي</IsMain>
+	<Mail>بريد</Mail>
+	<Phone>هاتف</Phone>
+	<City>مدينة</City>
+	<Yes>نعم</Yes>
+	<No>لا</No>
+	
+
+</Localizations>

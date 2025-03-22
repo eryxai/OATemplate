@@ -1,0 +1,4 @@
+<div class="my-4">
+  <msn-grid [data]="dataList" [columns]="tableColumns" [actions]="tableActions" [(pageSize)]="searchModel.pagination.pageSize!" [totalRecordsLength]="searchModel.pagination.totalCount!"
+            [(pageIndex)]="searchModel.pagination.pageIndex!" (pageNumberChange)="getAll()" (sortChanged)="onSortChanged($event)" (filterChanged)="onFilterChanged($event)"></msn-grid>
+</div>

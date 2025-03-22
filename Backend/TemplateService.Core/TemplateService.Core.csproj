@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\ViewModels\NewFolder1\**" />
+    <Compile Remove="Models\ViewModels\NewFolder2\**" />
+    <Compile Remove="Models\ViewModels\NewFolder3\**" />
+    <EmbeddedResource Remove="Models\ViewModels\NewFolder1\**" />
+    <EmbeddedResource Remove="Models\ViewModels\NewFolder2\**" />
+    <EmbeddedResource Remove="Models\ViewModels\NewFolder3\**" />
+    <None Remove="Models\ViewModels\NewFolder1\**" />
+    <None Remove="Models\ViewModels\NewFolder2\**" />
+    <None Remove="Models\ViewModels\NewFolder3\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
+    <PackageReference Include="GeoTimeZone" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
+    <PackageReference Include="TimeZoneConverter" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Common\Framework.Common.csproj" />
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj" />
+    <ProjectReference Include="..\TemplateService.Entity\TemplateService.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Localization\Template-en.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Localization\Template-ar.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="IRepositories\Dashboard\" />
+    <Folder Include="Models\DTOs\" />
+  </ItemGroup>
+
+</Project>

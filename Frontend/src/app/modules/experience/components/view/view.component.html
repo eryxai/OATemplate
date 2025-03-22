@@ -1,0 +1,41 @@
+<nav aria-label="breadcrumb" class="mb-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
+      </li>
+      <li class="breadcrumb-item" routerLink="/experience/list" aria-current="page">
+        {{ 'experience.list'| translate }}
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ 'experience.view' | translate }}
+  
+  
+      </li>
+    </ol>
+  </nav>
+  <div class="form-card">
+    <form [formGroup]="formGroup" class="mt-4">
+      <div class="row">
+  
+        <div class="form-group col-md-6 mb-2">
+          <label for="">{{"experience.nameAr" | translate}} <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" readonly name="nameAr" formControlName="nameAr" placeholder="{{'nameAr' | translate}}">
+        </div>
+        <div class="form-group col-md-6 mb-2">
+          <label for="">{{"experience.nameEn" | translate}} <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" readonly name="nameEn" formControlName="nameEn" placeholder="{{'nameEn' | translate}}">
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <msn-dropdown [isMandatory]="true" [options]="parentLookup" [disabled]="true" label="{{'experience.parent' | translate}}"
+              formControlName="parentId" ></msn-dropdown>
+             
+          </div>
+        </div>
+        
+      </div>
+      <div class="mt-4 col-md-12 text-end">
+        <button type="submit" class="btn btn-cancel mx-1" (click)="backToList()">{{'shared.back' | translate}}</button>
+      </div>
+    </form>
+  </div>

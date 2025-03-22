@@ -1,0 +1,15 @@
+<div class="input-with-label" [ngClass]="{ 'display-row': displayInRow }">
+  <label *ngIf="label" for="fname"
+    >{{ label | translate }}
+    <span class="text-danger px-1" *ngIf="isMandatory">*</span></label
+  >
+  <input
+    [type]="type"
+    [id]="label"
+    [disabled]="disabled"
+    [ngClass]="classname"
+    min="0"
+    placeholder="{{ placeholder | translate }}"
+    [(ngModel)]="value"
+    (input)="emitInputTextValue($any($event.target).value)" />
+</div>

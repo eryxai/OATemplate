@@ -1,0 +1,10 @@
+<div class="wrapper" [ngClass]="{ 'rtl-dir': directionRTL, 'ltr-dir': !directionRTL }">
+  <div class="main-container">
+    <!-- Page Content  -->
+    <div id="content" class="" role="main" class="pt-0">
+      <!--  <app-loader [hidden]="!isNavigating" [size]="'lg'"></app-loader> -->
+
+      <router-outlet [hidden]="isNavigating"></router-outlet>
+    </div>
+  </div>
+</div>

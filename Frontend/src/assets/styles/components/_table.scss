@@ -1,0 +1,101 @@
+// @import '../../color-palate.scss';
+@import '../variables/colors';
+
+
+// Table Centering
+.p-table-center {
+    .p-datatable-tbody > tr > td,
+    .p-datatable-thead > tr > th {
+      text-align: center;
+    }
+  }
+
+
+// Data Table Styles
+.p-datatable {
+    box-shadow: none;
+  
+    .p-datatable-wrapper {
+      border-radius: 2rem;
+      box-shadow: 1.1px 6.4px 27px 0 rgba(105, 95, 151, 0.08);
+      background-color: $white;
+    }
+  
+    .p-datatable-thead > tr > th {
+      background: $main-color7;
+      border-radius: 0;
+      border: none;
+      padding: 0.5rem 10px;
+      color: $white;
+  
+      &,
+      &
+        *:not(
+          .p-column-filter-menu-button:hover,
+          .p-column-filter-menu-button-open,
+          .p-column-filter-menu-button.p-column-filter-menu-button-open span,
+          .p-column-filter-menu-button.p-column-filter-menu-button-active span
+        ) {
+        color: $white !important;
+      }
+    }
+  
+    .p-sortable-column:not(.p-highlight):hover {
+      background: $main-color7;
+      color: $white;
+      opacity: 0.9;
+    }
+  }
+  
+  // Data Table Header Borders
+  .p-datatable-thead th:nth-of-type(1) {
+    border-top-left-radius: 25px;
+  }
+  
+  .p-datatable-thead th:last-of-type {
+    border-top-right-radius: 25px;
+  }
+
+  .p-column-filter-overlay {
+    z-index: 99999999999 !important;
+    .p-button:not(.p-button-text) {
+      background: $Primary;
+      border-color: $Primary;
+      color: $white;
+      font-family: cairo;
+    }
+  }
+  
+  .p-column-filter-menu-button:hover,
+  .p-column-filter-menu-button.p-column-filter-menu-button-open,
+  .p-column-filter-menu-button.p-column-filter-menu-button-active,
+  .p-sortable-column-badge {
+    background: $Primary !important;
+    color: $white !important;
+    border-radius: 15px;
+  
+    span {
+      color: $white !important;
+    }
+  }
+
+
+  td .input-image {
+    height: 35px !important;
+    margin-top: -10px !important;
+  
+    .status-text {
+      height: 27px !important;
+      line-height: 23px;
+      font-size: 14px;
+    }
+  }
+  
+  .tableMulti .p-multiselect {
+    min-width: 188px;
+    border-radius: 25px;
+    height: 35px;
+    margin-top: -10px;
+    font-size: 14px;
+    line-height: 23px;
+  }

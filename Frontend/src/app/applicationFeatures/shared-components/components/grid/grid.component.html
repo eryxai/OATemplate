@@ -1,0 +1,247 @@
+<div AddsRtl class="grid-wrapper w-100 new-grid">
+  <div class="w-100 fixed-height-table">
+    <group-by-menu
+      id="GroupingMenu"
+      [ngClass]="{ active: showGroupMenu }"
+      [columns]="groupColumnsOptions"
+      [selectedCol]="selectedGroupByCol"
+      (changed)="onGroupByChanged($event)"></group-by-menu>
+    <ng-container *ngIf="dataList && !isLoading">
+      <p-table
+        #ADVGrid
+        [value]="dataList"
+        [paginator]="paginator"
+        [rows]="pageSize"
+        [rowsPerPageOptions]="rowsPerPageOptions"
+        [responsive]="responsive"
+        [totalRecords]="totalRecordsLength"
+        [styleClass]="styleClass"
+        [lazy]="true"
+        [(first)]="firstIndex"
+        [currentPageReportTemplate]="currentPageReportTemplate"
+        [showCurrentPageReport]="true"
+        [selectionPageOnly]="true"
+        [scrollable]="true"
+        [dataKey]="recordKey"
+        [(selection)]="selectedRecords"
+        (onFilter)="onFilterChange($event,false)"
+        (onPage)="onPageChange($event)"
+        (onSort)="onSort($event)"
+        [expandedRowKeys]="expandedRows" (onRowExpand)="onRowExpand($event)" (onRowCollapse)="onRowCollapse($event)"
+        
+        (selectionChange)="onSelectionChange($event)">
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 5rem" *ngIf="RowExpansion"></th>
+            <th class="check-box-header" *ngIf="canSelect" scope="checkbox">
+              <p-tableHeaderCheckbox
+                *ngIf="viewMood === TableViewMood.RecordsView"
+                id=""></p-tableHeaderCheckbox>
+            </th>
+            <th
+              id=""
+              [ngClass]="{
+                'd-none': col.hidden,
+                'hide-sort': col.removeSorting,
+              }"
+              [ngStyle]="{
+                width: col.width
+                  ? 'calc(100% / ' + columns.length + ' * ' + col.width + ')'
+                  : 'calc(100% / ' + columns.length + ')',
+                minWidth: col.minWidth,
+              }"
+              *ngFor="let col of columns; trackBy: trackByIndex"
+              [scope]="col.field"
+              [pSortableColumn]="col.field">
+              <p-sortIcon
+                *ngIf="!col.removeSorting"
+                [field]="col.field"></p-sortIcon>
+              {{ col.name | translate }}
+              <p-columnFilter
+                *ngIf="
+                  col.type !== TableHeaderType.Boolean &&
+                  col.type !== TableHeaderType.Enum &&
+                  !col.removeFlitter
+                "
+                [type]="col.type!"
+                [field]="col.field"
+                [placeholder]="col.name | translate"
+                display="menu"></p-columnFilter>
+              <ngx-enum-filter
+                *ngIf=" col.type === TableHeaderType.Enum && !col.removeFlitter "
+                [enum]="col.enum"
+                [field]="col.field"
+                [column]="col.name"
+                (filterMetadata)="onFilterChange($event,true)"></ngx-enum-filter>
+              <ngx-bool-filter
+                *ngIf="col.type === TableHeaderType.Boolean && !col.removeFlitter"
+                [field]="col.field"
+                [column]="col.name"
+                (filterMetadata)="onFilterChange($event,false)"></ngx-bool-filter>
+            </th>
+            <th
+              class="action-header justify-content-center action sticky-action"
+              *ngIf="actions.length"
+              [scope]="'actions'">
+              {{ 'shared.action' | translate }}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData  let-expanded="expanded">
+          <ng-container
+            *ngTemplateOutlet="
+              viewMood === TableViewMood.RecordsView ? recordsView : treeView;
+              context: { $implicit: rowData
+                , expanded: expanded }
+            "></ng-container>
+        </ng-template>
+        <!-- If u want to use grouping tree view -->
+        <ng-template #treeView let-rowData  >
+          <tr class="group-row">
+            <td
+              [class]="'w-100 ' + 'level-' + rowData.index"
+              colspan="999"
+              (click)="rowData.isExpanded = !rowData.isExpanded">
+              <i *ngIf="rowData.isExpanded" class="pi pi-angle-down"></i>
+              <i *ngIf="!rowData.isExpanded" class="pi pi-angle-right"></i>
+              <span class="key-name">
+                {{ rowData['key'] }} - ( {{ rowData['count'] }} )
+              </span>
+            </td>
+          </tr>
+          <ng-container *ngIf="rowData.isExpanded">
+            <ng-container
+              *ngFor="let item of rowData['items']; trackBy: trackByIndex">
+              <ng-container
+                *ngTemplateOutlet="
+                  item['key'] ? treeView : recordsView;
+                  context: { $implicit: item }
+                "></ng-container>
+            </ng-container>
+          </ng-container>
+        </ng-template>
+        <!-- Normal view with its cases -->
+        <ng-template #recordsView let-rowData let-expanded="expanded">
+          <tr [ngClass]="{ 'clickable-row': isRowClickable }">
+            <td *ngIf="RowExpansion">
+              <p-button type="button" pRipple [pRowToggler]="rowData" [text]="true" [rounded]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" />
+          </td>
+            <td *ngIf="canSelect" class="check-box-header">
+              <p-tableCheckbox
+                [id]="rowData.id"
+                [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td
+              *ngFor="let col of columns; trackBy: trackByIndex"
+              (click)="onRowClicked(rowData.id)"
+              [ngClass]="{ 'd-none': col.hidden }"
+              [ngStyle]="{
+                width: col.width
+                  ? 'calc(100% / ' + columns.length + ' * ' + col.width + ')'
+                  : 'calc(100% / ' + columns.length + ')',
+                minWidth: col.minWidth,
+              }">
+              <div [ngSwitch]="col.type">
+                <!-- bool template -->
+                <span *ngSwitchCase="TableHeaderType.Boolean">
+                  <ng-container *ngIf="rowData[col.field]">
+                    {{ 'shared.yes' | translate }}
+                  </ng-container>
+                  <ng-container *ngIf="rowData[col.field] == false">
+                    {{ 'shared.no' | translate }}
+                  </ng-container>
+                  <ng-container *ngIf="rowData[col.field] == null">
+                  </ng-container>
+                </span>
+                <!-- Statues --Enum  -->
+                <ng-container *ngSwitchCase="TableHeaderType.Enum">
+                  <span
+                    *ngIf="rowData[col.field]"
+                    class="{{
+                      getEnumKeyByEnumValue(col.enum, rowData[col.field]) ||
+                        'Default'
+                    }} status-chip">
+                    {{ getEnumDisplayValue(col, rowData) | translate }}
+                  </span>
+                </ng-container>
+                <!-- Number template -->
+                <span *ngSwitchCase="TableHeaderType.Numeric">
+                  <ng-container
+                    *ngIf="
+                      rowData[col.field]?.length > 1000;
+                      else normalNumerical
+                    ">
+                    {{ rowData[col.field] | number: '1.2-2' }}
+                  </ng-container>
+                  <ng-template #normalNumerical>
+                    {{ rowData[col.field] }}
+                  </ng-template>
+                </span>
+                <!-- Date template -->
+                <span *ngSwitchCase="TableHeaderType.Date">
+                  {{ rowData[col.field] | date: 'mediumDate' }}
+                </span>
+
+                <!-- Avatar -->
+                <span *ngSwitchCase="TableHeaderType.Avatar">
+                  <div class="avatar-container">
+                    <img
+                      *ngFor="
+                        let avatar of rowData[col.field];
+                        trackBy: trackByIndex;
+                        let i = index
+                      "
+                      [class]="'order-' + i"
+                      [src]="avatar.avatar"
+                      alt=""
+                      srcset="" />
+                  </div>
+                </span>
+                <span *ngSwitchDefault> {{ rowData[col.field] }}</span>
+              </div>
+            </td>
+            <!-- Actions Buttons -->
+            <td *ngIf="actions.length" class="action-cell action sticky-action">
+              <ng-container *ngFor="let action of actions">
+                <button
+                  *ngIf="
+                    (action.visible || action.visible === undefined) &&
+                    (rowData[action.state?.['checkingFelid']] ===
+                      action.state?.['showIf'] ||
+                      action.state === undefined)
+                  "
+                  (click)="onTakeAction(action, rowData)"
+                  [title]="
+                    action.tooltipOptions?.tooltipLabel
+                      ? (action.tooltipOptions?.tooltipLabel! | translate)
+                      : ''
+                  "
+                  type="button"
+                  [ngClass]="{
+                    'btn btn-outline-primary': true,
+                  }">
+                  <em>{{ action.label! | translate }}</em>
+                  <i *ngIf="action.iconClass" [class]="action.iconClass"></i>
+                  <em
+                    *ngIf="action.styleClass"
+                    [class]="action.styleClass"></em>
+                </button>
+              </ng-container>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-rowData>
+          <tr>
+            <td colspan="6">
+          <ng-container 
+          [ngTemplateOutlet]="Template" 
+          [ngTemplateOutletContext]="{ $implicit: rowData }"
+          ></ng-container>
+            </td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+    </ng-container>
+  </div>
+</div>

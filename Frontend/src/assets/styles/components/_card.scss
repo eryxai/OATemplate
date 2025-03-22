@@ -1,0 +1,19 @@
+@import '../mixins/mixins.scss';
+// @import '../../color-palate.scss';
+@import '../variables/colors';
+
+.card {
+    &.sample-analysis {
+      background-color: transparent;
+      border: 0;
+    }
+}
+
+.card-wrapper {
+    @include card-wrapper(
+        $background-color: $white,
+        $border-radius: 12px,
+        $padding: 20px,
+        $margin: 20px
+    );
+}

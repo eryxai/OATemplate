@@ -1,0 +1,37 @@
+@import '../../../../../assets/styles/variables/variables.scss';
+@import '../../../../../assets/styles/variables/colors';
+@import '../../../../../assets/styles/mixins/mixins.scss';
+
+.unil-btn {
+  width: inherit;
+  height: inherit;
+  outline: none;
+  text-align: center;
+  font-size: inherit;
+  min-width: 115px;
+  font-size: inherit;
+  padding: 12px 14px;
+  min-height: 40px;
+  border-radius: 16px;
+  text-transform: uppercase;
+
+  &.unil-gradient-btn {
+    // @include main-gradient-degree(81deg, $green-color, $Primary);
+    border: 0px;
+    color: $white;
+    background: #005256;
+
+    &.disabled {
+      /// to do
+    }
+  }
+
+  &.unil-primary-btn {
+    //  to doo ...
+  }
+  &.unil-primary-accent-btn {
+    border: 0px;
+    color: $white;
+    background: $Primary;
+  }
+}

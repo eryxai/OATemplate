@@ -1,0 +1,21 @@
+<div class="input-with-label" [ngClass]="{ 'display-row': displayInRow }">
+  <label *ngIf="label" [for]="label" class="d-flex align-items-center">{{ label | translate }}
+    <span class="text-danger px-1" *ngIf="isMandatory"> * </span>
+
+    <strong [ngClass]="{ 'active-icon': value }" class="px-2" (click)="labelIconClicked.emit()" [class]="labelIcon">
+    </strong>
+  </label>
+  <select (change)="onDropdownChange()" [disabled]="disabled" [(ngModel)]="value" [id]="label" class="form-select form-select-sm"     [ngClass]="classname"
+  aria-label=".form-select-sm example">
+    <option [value]="null"  *ngIf="isMandatory" selected disabled>{{ placeholder | translate }}</option>
+    <option [value]="null"  *ngIf="!isMandatory" selected>{{ placeholder | translate }}</option>
+
+    <ng-container *ngIf="options">
+      <option *ngFor="let opt of options" [value]="opt[optionValue]">
+        {{ opt[optionLabel] }}
+      </option>
+    </ng-container>
+  </select>
+</div>
+
+<!-- {{options |json}} -->

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localizations>
+	<Id>Id</Id>
+	<CreationDate>Creation Date</CreationDate>
+	<Name>Name</Name>
+	<Description>Description</Description>
+	<IsActive>Is Active</IsActive>
+	<FounderCode>Founder Code</FounderCode>
+	<IsCapital>Is Capital</IsCapital>
+	<CountryName>Country Name</CountryName>
+	<IsMain>Is Main</IsMain>
+	<Mail>Mail</Mail>
+	<Phone>Phone</Phone>
+	<City>City</City>	
+	<Yes>Yes</Yes>
+	<No>No</No>
+</Localizations>

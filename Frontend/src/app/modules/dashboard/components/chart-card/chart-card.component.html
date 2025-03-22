@@ -1,0 +1,12 @@
+<div class="chart-container">
+  <div class="filter-container d-flex justify-content-end align-items-center mb-3">
+    <p-dropdown 
+      [options]="dateRanges" 
+      [(ngModel)]="selectedDateRange" 
+      placeholder="Select Date Range"
+      [style]="{'width':'200px'}">
+    </p-dropdown>
+    <button pButton type="button" label="Apply" (click)="filterChart()"></button>
+  </div>
+  <p-chart type="bar" id="customChart" [data]="data" [options]="options"></p-chart>
+</div>

@@ -1,0 +1,130 @@
+@import '.../../../../../assets/styles/color-palate.scss';
+
+.placeholder-chart {
+  height: 400px;
+  background: white;
+}
+
+//top statistics
+.box-statistic {
+  position: relative;
+  border-radius: 16px;
+  padding: 15px 10px;
+  margin: 5px;
+  color: #fff;
+}
+
+.box-statistic .amount-calc {
+  color: #fff;
+}
+
+.usedPanels-p {
+  background-color: #d8e990;
+  color: #063330;
+}
+
+.usedPanels-p .amount-calc {
+  color: #063330;
+}
+
+.emptyPanels-p {
+  background-color: #56b187;
+}
+
+.emptyMonth-p {
+  background-color: #156a7c;
+}
+
+.clients-p {
+  background-color: #005256;
+}
+
+//clients records
+.client-records {
+  background-color: #fbfbfb;
+  padding: 10px 30px;
+  border-radius: 16px;
+  margin-top: 100px;
+}
+
+.bg-dropped {
+  margin-top: -85px;
+  padding-bottom: 30px;
+}
+
+.client-record {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.clients-logo {
+  background: #efefef;
+  padding: 5px;
+  border-radius: 16px;
+}
+
+.wanted-statistcs-p {
+  background: #fbfbfb;
+  border-radius: 16px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.border-10px{
+  border-radius: 10px;
+}
+.card-img{
+  text-align: end;
+  padding: 10px 10px 0 10px;
+  height: 45px;
+  margin-bottom: -25px;
+  position: relative;
+  z-index: 9;
+  img{
+    height: -webkit-fill-available;
+  }
+}
+
+::ng-deep {
+  .bg-purple {
+    background: $main-color2;
+  }
+  .bg-yellow {
+    background: $yellow-color;
+  }
+  .bg-green{
+    background: $green-color;
+  }
+  .bg-orange{
+    background-color: $main-color1;
+  }
+  .bg-red{
+    background-color: $red-color;
+  }
+  .bg-black{
+    background-color: $black-color;
+  }
+  app-stats-card .card {
+    border: 0;
+  }
+  .analytic-cards{
+    .card{
+      .card-body{
+        .d-flex{
+          div{
+            display:grid;
+          
+            p{
+              order:-1;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

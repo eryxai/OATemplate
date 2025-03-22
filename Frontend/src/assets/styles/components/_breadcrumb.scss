@@ -1,0 +1,51 @@
+.breadcrumb {
+    color: $Primary;
+    font-size: 14px;
+    padding-top: 3px;
+    margin-bottom: 0;
+  
+    a {
+      color: $text-main;
+  
+      .icon {
+        color: $main-text;
+      }
+    }
+  
+    .active {
+      color: $Primary;
+    }
+  
+    .active a {
+      color: $black;
+  
+      &:hover {
+        color: $main-text;
+      }
+    }
+  }
+
+  .breadcrumb-item + .breadcrumb-item {
+    padding-inline-start: 0.5rem;
+    cursor: pointer;
+  
+    &:last-child {
+      cursor: default;
+    }
+  }
+  
+  .breadcrumb-item {
+    .active {
+      &:hover {
+        cursor: default;
+      }
+    }
+  
+    &::before {
+      color: $Secondary !important;
+    }
+  
+    svg {
+      color: $Primary;
+    }
+  }

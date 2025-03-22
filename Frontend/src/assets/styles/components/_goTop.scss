@@ -1,0 +1,24 @@
+// @import '../../color-palate.scss';
+@import '../variables/colors';
+
+button#GoTop {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    line-height: 42px;
+    text-align: center;
+    border-radius: 50%;
+    border: 0;
+    color: $white;
+    background: $Primary;
+    z-index: 10;
+    &:hover {
+      background: $Primary;
+    }
+  }
+  
+  button#GoTop:hover {
+    background: $main-color4;
+  }

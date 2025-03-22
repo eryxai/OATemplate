@@ -1,0 +1,89 @@
+<div class="d-flex align-items-center header-container">
+  <!-- Nav Bar -->
+  <div AddsRtl id="header" class="row p-2 pt-0 pb-0 header">
+    <div
+      class="col-md-4 mb-3 mb-md-0 d-flex align-items-center gap-10 nav-content">
+      <div class="d-flex align-items-center">
+        <div toggleSideMenu class="menu-toggler">
+          
+            <svg  class="toggle-icon" overflow="visible"   xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 17.606 17.604">
+              <g id="svgexport-17_1_" data-name="svgexport-17 (1)" transform="translate(17.605 17.639) rotate(180)">
+                <path id="Path_11635" data-name="Path 11635" d="M17.172,7.792,9.849.468A1.479,1.479,0,0,0,7.757,2.56l6.277,6.277L7.757,15.114a1.479,1.479,0,0,0,2.092,2.092l7.324-7.324A1.478,1.478,0,0,0,17.172,7.792ZM8.366,7.348,2.552,1.22a1.443,1.443,0,0,0-2.115,0,1.636,1.636,0,0,0,0,2.228L5.195,8.462.437,13.476a1.636,1.636,0,0,0,0,2.228,1.443,1.443,0,0,0,2.115,0L8.366,9.576a1.636,1.636,0,0,0,0-2.228Z" transform="translate(0 0)" fill="#7a86a1"/>
+              </g>
+            </svg>
+            
+        </div>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.8726 15.123L21.0657 4.92989C21.7629 5.78947 21.7115 7.0544 20.9117 7.85427L10.7185 18.0474C10.0214 17.1878 10.0727 15.9229 10.8726 15.123Z" stroke="black" stroke-width="0.459566"/>
+          <path d="M11.0249 28.0472L21.2181 17.8541C21.9152 18.7137 21.8639 19.9786 21.064 20.7785L10.8709 30.9716C10.1737 30.112 10.2251 28.8471 11.0249 28.0472Z" stroke="black" stroke-width="0.459566"/>
+          <path d="M18.4929 16.3198L12.148 22.6647C11.613 23.1997 10.7768 23.2497 10.1854 22.8149L16.5303 16.47C17.0652 15.935 17.9015 15.8849 18.4929 16.3198Z" stroke="black" stroke-width="0.459566"/>
+          <path d="M10.7101 16.8477C9.76565 15.9032 9.76565 14.3719 10.7101 13.4275L21.1375 3.00003V3.00003C22.082 3.94451 22.082 5.4758 21.1375 6.42028L10.7101 16.8477V16.8477Z" fill="black"/>
+          <path d="M10.8625 29.7719C9.91799 28.8274 9.91799 27.2961 10.8625 26.3516L21.2899 15.9242V15.9242C22.2344 16.8687 22.2344 18.4 21.2899 19.3445L10.8625 29.7719V29.7719Z" fill="black"/>
+          <path d="M9.84814 21.2941L16.2241 14.9182C16.8776 14.2647 17.9371 14.2647 18.5906 14.9182V14.9182L12.2147 21.2941C11.5612 21.9476 10.5016 21.9476 9.84814 21.2941V21.2941Z" fill="black"/>
+          </svg>
+          
+      </div>
+    </div>
+    <div class="col-md-8 nav-content">
+      <ul class="nav-right">
+        <li class="d-flex">
+          <div class="user-info">
+            <div class="user-img">
+              <img
+                *ngIf="!currentUser?.organizationImage"
+                src="./assets/media/admin-photo.jpg"
+                alt="img"
+                width="65"
+                height="65"
+                class="ml-2 user-image logo-header rounded-16" />
+              <img
+                *ngIf="currentUser?.organizationImage"
+                [src]="domainUrl + currentUser?.organizationImage"
+                alt="img"
+                width="65"
+                height="65"
+                class="ml-2 user-image logo-header rounded-16" />
+            </div>
+            <div class="content">
+              <span>{{currentUser?.name}}</span>
+              <span>{{currentUser?.roleName}}</span>
+            </div>
+
+            <div class="user-option">
+               <div
+                class="dropdown dropdown-main notification-container"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="UserMnu">
+                <img src="./assets/media/arrow dow.png" alt="" />
+              </div> 
+              <!-- Dropdown menu content -->
+              <ul class="dropdown-menu" aria-labelledby="UserMnu">
+                <li>
+                  <a
+                    class="lang"
+                    *ngIf="languageService.getLanguage == 'en'"
+                    (click)="changeLang('ar')">
+                    <span>العربية</span>
+                  </a>
+                  <a
+                    class="lang"
+                    *ngIf="languageService.getLanguage == 'ar'"
+                    (click)="changeLang('en')">
+                    <span>English</span>
+                  </a>
+                  <a
+                    class="lang"
+                    (click)="userLogout()">
+                    <span>Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

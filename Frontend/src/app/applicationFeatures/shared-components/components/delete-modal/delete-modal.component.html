@@ -1,0 +1,33 @@
+<!-- Delete Modal -->
+<div class="delete-model-wrapper">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!--  <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+      </div> -->
+      <div class="modal-body pt-5">
+        <div class="mb-13 text-center">
+          <h5 class="text-black">
+            {{ 'error.shared.' + deleteMessage | translate }}
+          </h5>
+        </div>
+      </div>
+      <div class="modal-footer border-0 mx-auto">
+        <button
+          type="button"
+          class="btn btn-primary mx-1"
+          (click)="deleteAction()">
+          {{ 'shared.confirm' | translate }}
+        </button>
+
+        <button
+          type="
+            button"
+          class="btn btn-cancel mx-1"
+          (click)="close()">
+          {{ 'shared.cancel' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

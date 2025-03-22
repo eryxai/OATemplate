@@ -1,0 +1,121 @@
+<nav aria-label="breadcrumb" class="mb-2">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
+    </li>
+    <li class="breadcrumb-item" aria-current="page">
+      <a [routerLink]="['/roles/list']">{{
+        'Role.list.title' | translate
+        }}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <span *ngIf="!id"> {{ 'Role.addNewRole' | translate }}</span>
+      <span *ngIf="id"> {{ 'Role.editRole' | translate }}</span>
+    </li>
+  </ol>
+</nav>
+
+<div class="form-card">
+  <form [formGroup]="editForm"(ngSubmit)="submit()" class="mt-4">
+    <div class="row mb-4">
+      <div class="col-md-6 mb-6">
+        <div class="input-with-label">
+          <msn-input [isMandatory]="true" label="Role.nameAr" formControlName="nameAr" placeholder="{{'Role.nameAr'|translate}}"></msn-input>
+          <app-control-error-display [control]="getControl('nameAr')">
+          </app-control-error-display>
+        </div>
+      </div>
+      <div class="col-md-6 mb-6">
+        <div class="input-with-label">
+          <msn-input [isMandatory]="true" label="Role.nameEn" formControlName="nameEn" placeholder="{{'Role.nameEn'|translate}}"></msn-input>
+          <app-control-error-display [control]="getControl('nameEn')">
+          </app-control-error-display>
+        </div>
+      </div>
+      <div class="col-md-6 mb-6">
+        <div class="input-with-label">
+          <label for="fname">{{
+            'shared.arabicDescription' | translate
+            }}</label>
+          <textarea formControlName="descriptionAr" maxlength="200" class="form-control" placeholder="{{
+              'shared.arabicDescription' | translate
+            }}"></textarea>
+          <app-control-error-display [control]="getControl('descriptionAr')">
+          </app-control-error-display>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-6">
+        <div class="input-with-label">
+          <label for="lname">
+            {{ 'shared.englishDescription' | translate }}</label>
+          <textarea formControlName="descriptionEn"  maxlength="200" class="form-control" placeholder="{{
+              'shared.englishDescription' | translate
+            }}"></textarea>
+          <app-control-error-display [control]="getControl('descriptionEn')">
+          </app-control-error-display>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br />
+  <br>
+  <div class="card" *ngIf="allPermissionLoaded">
+    <div class="card-header">
+      <input type="checkbox" class="checkAllPermission" [(ngModel)]="checkAllPermission" (change)="checkAllPermissionChange($event)">
+      {{"shared.permissions"|translate}}
+    </div>
+    <div class="row">
+      <div class="accordion-style-1 accordion-flush accordion " id="accordionExample">
+        <div *ngFor="let group of PermissionsGroupList" class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+group.id" aria-expanded="false" aria-controls="collapseOne"> {{group.name}} </button>
+            <!-- <input type="checkbox" class="checkAllPermission" [(ngModel)]="group.checked"> -->
+          </h2>
+          <div id="collapseOne{{group.id}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div *ngFor="let child of group.children" class="accordion-item">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" (click)="getPermission(child)" [attr.data-bs-target]="'#collapseTwo'+child.id" aria-expanded="false" aria-controls="collapseTwo"> &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" [ngModelOptions]="{standalone: true,updateOn:'submit'}" [(ngModel)]="child.checked" (change)="checkAllSubPermission($event,child.id,group.id)"> &nbsp;&nbsp;{{child.name}} </button>
+              <div id="collapseTwo{{child.id}}" class="accordion-collapse collapse" aria-labelledby="headingOne" [attr.data-bs-parent]="'#collapseOne'+group.id">
+                <div class="accordion-body">
+                  <ul *ngFor="let item of child.permissions" class="checkable-tree">
+                    <li>
+                      <a class="active d-flex align-items-center gap-10">
+                        <input type="checkbox" [(ngModel)]="item.checked" (change)="onChangePermission($event,item.id,child.id,group.id)">
+                        <span class="text"> {{item.name}} </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+              
+              <div  class="accordion-item">
+                <div class="accordion-body">
+                  <ul *ngFor="let item of group.permissions" class="checkable-tree">
+                    <li>
+                      <a class="active d-flex align-items-center gap-10">
+                        <input type="checkbox" [(ngModel)]="item.checked" (change)="onChangePermission($event,item.id,null,group.id)">
+                        <span class="text"> {{item.name}} </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-control-error-display [control]="getControl('permissions')">
+    </app-control-error-display>
+  </div>
+
+  <div class="col-2 ms-auto d-flex gap-10 justify-content-end">
+    <button [disabled]="isDisabled" type="button" (click)="submit()" class="main-btn mt-5">
+      <span>{{ 'shared.save' | translate }}</span>
+    </button>
+    <button type="" class="light-btn mt-5" (click)="goToList()">
+      <span>{{ 'shared.cancel' | translate }}</span>
+    </button>
+  </div>
+</div>

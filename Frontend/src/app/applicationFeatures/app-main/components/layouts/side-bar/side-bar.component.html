@@ -1,0 +1,159 @@
+<div AddsRtl id="sideBarMenu" class="menu side-menu active new-active-mode">
+  <div class="logo-wrapper">
+    <a href="#" class="logotype">
+      <img src="./assets/media/fav-logo.png" alt="img" width="50px" />
+    </a>
+  </div>
+  <ul class="menu-dropdown scrollbar-ff">
+    <li class="" *ngFor="let item of navList; let i = index">
+      <ng-container *ngIf="item.childs?.length">
+        <ng-container *ngIf="showParentActivate(item.childs)">
+          <div
+            id="nested-menu"
+            class="nested-menu"
+            [ngClass]="{ active: item.activeClass == true }">
+            <a
+              toggleSideMenu
+              [onlyOpen]="true"
+              (click)="
+                item.activeClass = !item.activeClass;
+                unActiveSubMenu();
+                openMenu()
+              "
+              class="nested-menu-btn d-flex align-items-center gap-2"
+              [ngClass]="{ active: item.activeClass == true }"
+              title="{{ item.title | translate }}">
+              <span *ngIf="item && item.icon" class="ico">
+                <span [class]="'icon ' + item.icon"></span>
+              </span>
+              <span *ngIf="item && item.img" class="ico">
+                <img [src]="item.img" class="icon-img" />
+              </span>
+              <span class="hide-collapse text">
+                {{ item.title | translate }}</span
+              >
+              <i class="hide-collapse fa-solid fa-angle-right ms-auto"></i>
+              <div class="overlay"></div>
+            </a>
+            <div class="nested-menu-content">
+              <ng-container *ngFor="let subItem of item.childs; let j = index">
+                <ng-container *ngIf="adminGuard.showActivate(subItem.data)">
+                  <a
+                    [routerLink]="[subItem.link]"
+                    routerLinkActive="active"
+                    class="child"
+                    title="{{ subItem.title | translate }}">
+                    <span *ngIf="item && subItem.icon" class="ico">
+                      <span [class]="'icon ' + subItem.icon"></span>
+                    </span>
+                    <span *ngIf="item && subItem.img" class="ico">
+                      <img [src]="subItem.img" class="icon-img" />
+                    </span>
+                    <span class="hide-collapse title">{{
+                      subItem.title | translate
+                    }}</span>
+                  </a>
+                </ng-container>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="!item.childs?.length">
+        <div
+          class="nested-menu"
+          [ngClass]="{ active: item.activeClass == true }">
+          <ng-container *ngIf="adminGuard.showActivate(item.data)">
+            <a
+              toggleSideMenu
+              [onlyOpen]="true"
+              class="nested-menu-btn d-flex align-items-center gap-2"
+              (click)="onMenuItemContainerClick(item)"
+              [routerLink]="[item.link]"
+              routerLinkActive="active"
+              title="{{ item.title | translate }}">
+              <span *ngIf="item && item.icon" class="ico">
+                <span [class]="'icon ' + item.icon"></span>
+              </span>
+              <span *ngIf="item && item.img" class="ico">
+                <img [src]="item.img" class="icon-img" />
+              </span>
+              <span class="hide-collapse">{{ item.title | translate }}</span>
+              <div class="overlay"></div>
+            </a>
+          </ng-container>
+        </div>
+      </ng-container>
+    </li>
+    <li class="all-rest">
+      <div class="ico">
+        <div class="log-out">
+          <a data-bs-toggle="modal" data-bs-target="#logOutModel">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="19 20 20 20">
+              <g data-name="Group 22725">
+                <g data-name="vuesax/linear/export">
+                  <g data-name="export">
+                    <path
+                      d="M29 20c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10M30 29l8.2-8.2M39 24.83V20h-4.83"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      stroke-width="1.5"
+                      stroke="#fff"
+                      fill="transparent"
+                      data-name="Vector" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  data-bs-backdrop="static"
+  id="logOutModel"
+  tabindex="-1"
+  aria-labelledby="deleteModelLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-13 text-center">
+          <h5 class="text-black">{{ 'shared.logOutMessage' | translate }}</h5>
+        </div>
+      </div>
+      <div class="modal-footer border-0 mx-auto">
+        <button
+          type="button"
+          class="btn btn-primary mx-1"
+          data-bs-dismiss="modal"
+          (click)="userLogout()">
+          {{ 'shared.logOut' | translate }}
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-cancel mx-1"
+          data-bs-dismiss="modal">
+          {{ 'shared.cancel' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

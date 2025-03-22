@@ -1,0 +1,14 @@
+<div class="side-menu-advanced-actions">
+  <label for="GroupBy"> {{ "GroupBy" | translate }} </label>
+
+  <div *ngFor="let col of columns" class="p-field-checkbox">
+    <p-checkbox
+      name="group1"
+      [value]="col"
+      [(ngModel)]="selectedCol"
+      [inputId]="col.field"
+      (onChange)="onGroupByChanged()"
+    ></p-checkbox>
+    <label> {{ col.name | translate }} </label>
+  </div>
+</div>

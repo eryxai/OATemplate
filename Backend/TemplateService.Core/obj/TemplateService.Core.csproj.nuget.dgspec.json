@@ -1,0 +1,412 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Core\\TemplateService.Core.csproj": {}
+  },
+  "projects": {
+    "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj",
+        "projectName": "Framework.Common",
+        "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj",
+        "packagesPath": "C:\\Users\\Eryx\\.nuget\\packages\\",
+        "outputPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Eryx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Core\\Framework.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Core\\Framework.Core.csproj",
+        "projectName": "Framework.Core",
+        "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Core\\Framework.Core.csproj",
+        "packagesPath": "C:\\Users\\Eryx\\.nuget\\packages\\",
+        "outputPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Eryx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj": {
+                "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Common\\TemplateService.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Common\\TemplateService.Common.csproj",
+        "projectName": "TemplateService.Common",
+        "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Common\\TemplateService.Common.csproj",
+        "packagesPath": "C:\\Users\\Eryx\\.nuget\\packages\\",
+        "outputPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Eryx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Core\\TemplateService.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Core\\TemplateService.Core.csproj",
+        "projectName": "TemplateService.Core",
+        "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Core\\TemplateService.Core.csproj",
+        "packagesPath": "C:\\Users\\Eryx\\.nuget\\packages\\",
+        "outputPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Eryx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj": {
+                "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj"
+              },
+              "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Core\\Framework.Core.csproj": {
+                "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Core\\Framework.Core.csproj"
+              },
+              "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Entity\\TemplateService.Entity.csproj": {
+                "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Entity\\TemplateService.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "GeoTimeZone": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "TimeZoneConverter": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Entity\\TemplateService.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Entity\\TemplateService.Entity.csproj",
+        "projectName": "TemplateService.Entity",
+        "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Entity\\TemplateService.Entity.csproj",
+        "packagesPath": "C:\\Users\\Eryx\\.nuget\\packages\\",
+        "outputPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Eryx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj": {
+                "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\Framework.Common\\Framework.Common.csproj"
+              },
+              "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Common\\TemplateService.Common.csproj": {
+                "projectPath": "D:\\WK\\ST\\Technical\\eryx\\GitHubPublic\\OATEmplate\\Backend\\TemplateService.Common\\TemplateService.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

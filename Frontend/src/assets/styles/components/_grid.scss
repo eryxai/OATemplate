@@ -1,0 +1,239 @@
+// @import '../../color-palate.scss';
+@import '../variables/colors';
+@import '../mixins/tree-table-allocation.scss';
+
+@include allocateTreeChild;
+
+.p-datatable .p-sortable-column:not(.p-highlight){
+    background: $main-color7;
+    color: $white;
+}
+.p-datatable .p-sortable-column:not(.p-highlight):hover{
+    opacity: 0.9;
+}
+
+
+.p-paginator {
+    font-family: $font-family-cairo;
+  
+    .p-paginator-pages {
+      .p-paginator-page {
+        border-radius: 35%;
+      }
+    }
+  }
+  
+  [dir='rtl'] {
+    .p-paginator-icon {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+
+table {
+    .action-cell {
+      .btn-outline-primary {
+        border-radius: 35%;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+  
+        &:has(.fa-eye) {
+          background-color: rgb($Primary, 0.1);
+          color: $Primary !important;
+          border: 0;
+  
+          &:hover {
+            color: $white !important;
+            background-color: $Primary !important;
+          }
+        }
+  
+        &:has(.fa-trash-can) {
+          background-color: rgb($red-color, 0.1);
+          color: $red-color !important;
+          border: 0;
+  
+          &:hover {
+            color: $white !important;
+            background-color: $red-color !important;
+          }
+        }
+  
+        &:has(.fa-check) {
+          background-color: rgb($green-color, 0.1);
+          color: $green-color !important;
+          border: 0;
+  
+          &:hover {
+            color: $white !important;
+            background-color: $green-color !important;
+          }
+        }
+  
+        &:has(.fa-pen-to-square) {
+          background-color: rgb($Primary, 0.1);
+          color: $Primary !important;
+          border: 0;
+  
+          &:hover {
+            color: $white !important;
+            background-color: $Primary !important;
+          }
+        }
+      }
+    }
+  
+    .approved-chip {
+      background-color: $green-color !important;
+      font-family: $font-family-cairo;
+      font-style: normal;
+  
+      &.reject {
+        background-color: $red-color !important;
+      }
+    }
+  }
+
+
+  table {
+    width: 100%;
+  
+    td {
+      vertical-align: middle;
+      font-size: 14px;
+      cursor: default;
+    }
+  
+    th {
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: capitalize;
+      font-family: $font-family-cairo;
+      cursor: pointer;
+    }
+  }
+  
+  
+  
+  .fixed-width-table-1500 {
+    min-width: 1500px;
+  }
+  
+  .fixed-width-table {
+    min-width: 1200px;
+  }
+  
+  .fixed-width-table-900 {
+    min-width: 900px;
+  }
+  
+  .fixed-height-500 {
+    height: 500px;
+  }
+  
+  .fixed-height-table {
+    //  height: calc(100vh - 220px);
+  }
+  
+  .table-fixed-columns-1 {
+    :is(tbody, thead) tr :is(td:nth-child(-n + 1), th:nth-child(-n + 1)) {
+      position: sticky;
+      background: $white;
+    }
+  
+    :is(tbody, thead) tr :is(td:nth-child(-n + 1), th:nth-child(-n + 1)) {
+      &:nth-child(1) {
+        left: 0;
+        z-index: 99;
+      }
+    }
+  
+    thead tr:first {
+      z-index: 99999;
+    }
+  
+    thead tr th {
+      padding: 20px 0;
+    }
+  
+    tbody tr td:nth-child(1) {
+      text-align: start;
+    }
+  }
+  
+  .table-fixed-columns-3 {
+    :is(tbody, thead) tr :is(td:nth-child(-n + 3), th:nth-child(-n + 3)) {
+      position: sticky;
+      background: $white;
+    }
+  
+    :is(tbody, thead) tr :is(td:nth-child(-n + 3), th:nth-child(-n + 3)) {
+      &:nth-child(1) {
+        left: 0;
+      }
+  
+      &:nth-child(2) {
+        left: 100px;
+      }
+  
+      &:nth-child(3) {
+        left: 300px;
+      }
+    }
+  
+    thead tr th {
+      padding: 20px 0;
+    }
+  
+    tbody tr td:nth-child(2) {
+      text-align: start;
+    }
+  }
+  
+  .pagination {
+    gap: 5px;
+  
+    .page-link:not(.unstyled) {
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      width: 30px;
+      aspect-ratio: 1/1;
+      font-size: 12px;
+      display: grid;
+      place-content: center;
+      padding: 0;
+  
+      &:hover {
+        background: $Secondary !important;
+        color: $white;
+      }
+    }
+  
+    .page-link {
+      color: $main-color4;
+      font-weight: 600;
+    }
+  
+    .page-link ul.dropdown-menu.show {
+      min-width: 50px !important;
+    }
+  
+    .page-link.unstyled {
+      border: none;
+      background: none;
+      padding-block: 3px;
+    }
+  
+    .page-link.unstyled.disabled {
+      color: var(--bs-gray-300);
+    }
+  
+    .page-item.active .page-link {
+      background: $Primary !important;
+      border-color: $Primary !important;
+      color: $white;
+    }
+  }

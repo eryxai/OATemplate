@@ -1,0 +1,24 @@
+<button
+  (click)="showOverlay($event)"
+  type="button"
+  aria-haspopup="true"
+  class="p-column-filter-menu-button p-link"
+  aria-expanded="false"
+>
+  <span class="pi pi-filter-icon pi-filter ng-tns-c335-43"></span>
+</button>
+
+<p-overlayPanel class="enum-filter-overlay" #overlayPanel> 
+   <p-dropdown
+    [options]="options"
+    optionLabel="label"
+    optionValue="value"
+    [(ngModel)]="selectedValue"
+    [placeholder]="column | translate"
+    (onChange)="onValueChange($event)"
+  ></p-dropdown>
+
+  <!-- <div class="footer pt-4 d-flex justify-content-between">
+      to do  .....
+  </div> -->
+</p-overlayPanel>
